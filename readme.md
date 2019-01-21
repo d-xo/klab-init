@@ -2,7 +2,7 @@
 
 This is a template repo and small tutorial for those interested in getting started specifying smart contracts with [`klab`](https://github.com/dapphub/klab).
 
-klab is a smart contract specification language and proof explorer. Klab specs can be thought of as an extremely thorough test suite (every possible execution is checked) that can be run against any evm bytecode.
+klab is a smart contract specification language and proof explorer. A Klab spec can be thought of as an extremely thorough test suite that can be run against any evm bytecode.
 
 Using klab we can show:
 
@@ -25,7 +25,7 @@ Either:
 
 ## Using this Repo
 
-### Preperation
+### Preparation
 
 1. Add the project you wish to specify as a submodule in the `dapp` folder (`git submodule add <REPO> dapp`)
 1. Build the project (`(cd dapp && dapp build)`)
