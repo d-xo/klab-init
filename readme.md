@@ -36,6 +36,10 @@ Either:
 1. Open [`src/spec.act.md`](./src/spec.act.md) and start writing your spec
 1. Build the k expressions (`klab build`)
 
+## Verifying Code
+
+1. Run `klab prove <path_to_spec.k>`
+
 ### Exploring Proofs
 
 1. In one tab run `klab server`
