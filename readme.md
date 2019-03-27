@@ -9,38 +9,47 @@ Using klab we can show:
 - The spec covers every possible execution (is exhaustive)
 - All specified behaviours hold for every possible execution
 
-## Running Klab
+## Building Klab
 
-Either:
+1. Clone the klab repo (`git@github.com:dapphub/klab.git`)
+1. From the repo root run `nix-shell`
+1. Run `make deps`
+1. Run `make deps-haskell`
+1. Klab is now available in your path
 
-1. Follow the installation instructions [here](https://github.com/dapphub/klab#setting-up-klab-server-and-client)
-1. Use the docker image: `docker run -it --network host -v "$(pwd)":"$(pwd)" -w "$(pwd)" dapphub/klab klab`
+In future when you need to use klab you can go to the repo root, run `nix-shell` and you will be
+dropped into a shell with `klab` available on `PATH`.
 
 ## Learning Klab
 
-1. Read the documentation on the spec format: https://github.com/dapphub/klab/blob/master/acts.md
-1. Look at the [examples](https://github.com/dapphub/klab/tree/master/examples)
+1. Read the [documentation](https://github.com/dapphub/klab/blob/master/acts.md) on the spec format
+1. Play around with the [examples](https://github.com/dapphub/klab/tree/master/examples)
+1. Watch @mrchico's [talk](https://www.youtube.com/watch?v=B-3eZiZ5HPE)
 1. Look at the [keybindings](https://github.com/dapphub/klab#key-bindings)
 1. Work through the DevCon4 workshop: [problems](https://github.com/dapphub/fv-tutorial), [solutions](https://github.com/dapphub/fv-tutorial-solutions)
 
 ## Using this Repo
 
-### Preparation
+### Writing Implementations
 
-1. Add the project you wish to specify as a submodule in the `dapp` folder (`git submodule add <REPO> dapp`)
-1. Build the project (`(cd dapp && dapp build)`)
-1. Open [`config.json`](./config.json) and edit the implementations section to connect contract names in the spec with concrete bytecode implementations (`*.sol.json` files).
+This repo uses [`dapp`](https://github.com/dapphub/dapptools/tree/master/src/dapp) to handle
+solidity related tasks. You can build with `dapp build` and run tests with `dapp test`.
 
 ### Writing Specs
 
-1. Open [`src/spec.act.md`](./src/spec.act.md) and start writing your spec
+1. Open [`spec/spec.act.md`](./spec/spec.act.md) and start writing your spec
+1. Ensure that the mapping from specs to implementations in [`config.json`](./config.json) is up to
+   date
 1. Build the k expressions (`klab build`)
 
-## Verifying Code
+### Verifying a Single Spec
 
-1. Run `klab prove <path_to_spec.k>`
+1. Run `klab prove --dump <path_to_spec.k>`
+
+### Verifying All Specs
+
+1. Run `klab prove-all`
 
 ### Exploring Proofs
 
-1. In one tab run `klab server`
-1. In another run `klab run --spec <path_to_spec.k>`
+1. Run `klab debug $(klab hash <path_to_spec.k>)`

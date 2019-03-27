@@ -2,13 +2,13 @@ pragma solidity ^0.5.4;
 
 import "ds-test/test.sol";
 
-import "./KlabInit.sol";
+import "./Dapp.sol";
 
-contract KlabInitTest is DSTest {
-    KlabInit init;
+contract DappTest is DSTest {
+    Dapp dapp;
 
     function setUp() public {
-        init = new KlabInit();
+        dapp = new Dapp();
     }
 
     function testFail_basic_sanity() public {
