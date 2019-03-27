@@ -1,6 +1,6 @@
 # Klab Starter Pack
 
-This is a template repo and small tutorial for those interested in getting started specifying smart contracts with [`klab`](https://github.com/dapphub/klab).
+This is a template repo and list of resources for those interested in getting started specifying smart contracts with [`klab`](https://github.com/dapphub/klab).
 
 klab is a smart contract specification language and proof explorer. A Klab spec can be thought of as an extremely thorough test suite that can be run against any evm bytecode.
 
@@ -28,7 +28,7 @@ dropped into a shell with `klab` available on `PATH`.
 1. Look at the [keybindings](https://github.com/dapphub/klab#key-bindings)
 1. Work through the DevCon4 workshop: [problems](https://github.com/dapphub/fv-tutorial), [solutions](https://github.com/dapphub/fv-tutorial-solutions)
 
-## Using this Repo
+## Working With This Repo
 
 ### Writing Implementations
 

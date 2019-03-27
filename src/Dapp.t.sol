@@ -11,11 +11,8 @@ contract DappTest is DSTest {
         dapp = new Dapp();
     }
 
-    function testFail_basic_sanity() public {
-        assertTrue(false);
-    }
-
-    function test_basic_sanity() public {
-        assertTrue(true);
+    function test_basic_add() public {
+		uint res = dapp.add(1, 100);
+		assertEq(res, 101);
     }
 }
